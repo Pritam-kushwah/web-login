@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forget Password</title>
+<style>
+    /* Body Styling */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(120deg, #89f7fe, #66a6ff);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    /* Container Styling */
+    .container {
+        background: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 350px;
+    }
+
+    /* Header Styling */
+    h2 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    /* Label Styling */
+    label {
+        font-size: 14px;
+        color: #555;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    /* Input Field Styling */
+    input[type="email"] {
+        width: 100%;
+        padding: 10px 12px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+        box-sizing: border-box;
+        transition: border-color 0.3s;
+    }
+
+    input[type="email"]:focus {
+        border-color: #66a6ff;
+        outline: none;
+        box-shadow: 0 0 5px rgba(102, 166, 255, 0.4);
+    }
+
+    /* Submit Button Styling */
+    input[type="submit"] {
+        background: #66a6ff;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        padding: 12px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+        width: 100%;
+    }
+
+    input[type="submit"]:hover {
+        background: #559ad4;
+        transform: translateY(-2px);
+    }
+
+    input[type="submit"]:active {
+        transform: translateY(1px);
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>Forget Password</h2>
+        <form action="SendMail" method="post">
+            <label for="email">Enter Email:</label>
+            <input type="email" id="email" name="mail_by_forget" placeholder="Enter your email" required>
+            <input type="submit" value="Send Email">
+        </form>
+    </div>
+</body>
+</html>

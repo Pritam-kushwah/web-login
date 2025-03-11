@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration</title>
+<style>
+    /* Body Styling */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(120deg, #74ebd5, #9face6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    /* Container Styling */
+    .container {
+        background: #ffffff;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 400px;
+    }
+
+    h2 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    /* Input Fields */
+    input[type="text"], 
+    input[type="email"], 
+    input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+        box-sizing: border-box;
+        transition: border-color 0.3s;
+    }
+
+    input:focus {
+        border-color: #74ebd5;
+        outline: none;
+        box-shadow: 0 0 5px rgba(116, 235, 213, 0.4);
+    }
+
+    /* Submit Button */
+    input[type="submit"] {
+        background: #74ebd5;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        padding: 12px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+        width: 100%;
+    }
+
+    input[type="submit"]:hover {
+        background: #5fcdc5;
+        transform: translateY(-2px);
+    }
+
+    input[type="submit"]:active {
+        transform: translateY(1px);
+    }
+
+    /* Error Message */
+    .error {
+        font-size: 12px;
+        color: red;
+        display: none;
+        text-align: left;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <form action="Register" method="post">
+            <h2>User Registration</h2>
+            <input type="text" name="name" placeholder="Enter name" required>
+            <input type="email" name="mail" placeholder="Enter email" required>
+            <input type="text" name="mob" pattern="[6789][0-9]{9}" placeholder="Enter mobile number" required>
+            <input type="password" id="pwd1" name="pass" placeholder="Enter Password" required>
+            <input type="password" id="pwd2" placeholder="Confirm Password">
+            <span style="color:red" id="one"></span>
+            <input type="submit" value="Register" onclick="return valid()">
+        </form>
+    </div>
+
+    <script>
+        // Password validation logic remains unchanged
+        function valid() {
+            const pwd1 = document.getElementById("pwd1").value;
+            const pwd2 = document.getElementById("pwd2").value;
+            if (pwd1 === pwd2) {
+                return true;
+            } else {
+                document.getElementById("one").innerHTML = "Password and Confirm Password do not match";
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
